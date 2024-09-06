@@ -12,7 +12,7 @@ npm-debug.log
 yarn-error.log
 
 # IDEs and editors
-.idea/
+first-angular-app/.idea/
 .project
 .classpath
 .c9/
@@ -152,7 +152,7 @@ fabric.properties
 ### Intellij Patch ###
 # Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
 .idea
-.idea\inspectionProfiles
+/.idea/inspectionProfiles/Project_Default.xml
 
 # Sonarlint plugin
 # https://plugins.jetbrains.com/plugin/7973-sonarlint
