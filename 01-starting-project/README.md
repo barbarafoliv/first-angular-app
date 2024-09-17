@@ -1,7 +1,6 @@
-# FirstAngularApp
+# Essentials
 
-This repository serves as a practical learning journey for mastering Angular concepts. Here, I'll document my exploration of component architecture, lifecycle hooks, and best practices for building robust Angular applications.
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
 
 ## Development server
 
