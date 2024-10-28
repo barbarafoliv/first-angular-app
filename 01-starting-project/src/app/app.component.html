@@ -2,31 +2,23 @@
 
 <main>
   <ul id="users">
-    <li>
-      <app-user
-        [user] = "users[0]"
-        (select)="onSelectUser($event)"
-      />
-    </li>
-    <li>
-      <app-user
-        [user] = "users[1]"
-        (select)="onSelectUser($event)"
-      />
-    </li>
-    <li>
-      <app-user
-        [user] = "users[2]"
-        (select)="onSelectUser($event)"
-      />
-    </li>
-    <li>
-      <app-user
-        [user] = "users[3]"
-        (select)="onSelectUser($event)"
-      />
-    </li>
+    <!-- track user.id would allow Angular to uniquely identify each user by their id -->
+    @for (user of users; track user.id) {
+      <li>
+        <app-user
+          [user] = "user"
+          [selected]="user.id === selectedUserId"
+          (select)="onSelectUser($event)"
+        />
+      </li>
+    }
   </ul>
 
-  <app-tasks [name]="selectedUser?.name"></app-tasks>
+  <!-- In Angular 17, the @if directive was introduced as a more intuitive and readable alternative to the traditional
+  *ngIf directive. -->
+  @if (selectedUser) {
+    <app-tasks [userId]="selectedUser.id" [name]="selectedUser?.name"></app-tasks>
+  } @else {
+    <p id="fallback">Select a user to see their tasks!</p>
+  }
 </main>

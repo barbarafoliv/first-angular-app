@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output, output} from '@angular/core';
+import {User} from "./user.model";
 
 /*
 type User = {
@@ -7,12 +8,6 @@ type User = {
   name: string;
 };
 */
-
-interface User {
-  id: string;
-  avatar: string;
-  name: string;
-}
 
 @Component({
   selector: 'app-user',
@@ -26,8 +21,8 @@ export class UserComponent {
   @Input({ required: true }) avatar!: string; // used to avoid TS error about properties being potentially undefined
   @Input({ required: true }) name!: string; // "required" was introduced in v16, an error is thrown if parent component fails to pass a value for that input
   */
-  @Input({ required: true }) user!: User;
-
+  @Input({required: true}) user!: User;
+  @Input({required: true}) selected!: boolean;
   @Output() select = new EventEmitter<string>();
   /*select = output<string>();*/
 
